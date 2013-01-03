@@ -12,6 +12,7 @@ function setdg(){
 		frozenColumns:[[  
 			{field:'KdBarang',title:'Code',width:80},
 			{field:'NmBarang',title:'Name',width:100},   
+			{field:'Ket',title:'Specification',width:100},   
 			{field:'Sat',title:'Unit',width:50}, 
 		]],
 		columns:[[  					
@@ -27,7 +28,7 @@ function setdg(){
 			}},
 			{field:'ket',title:'Remarks',width:80}
 		]],
-		url: '<?php echo $basedir; ?>models/material/mutasi_fg_grid2.php?mat_type=11&date1='+$("#date1").datebox('getValue')+'&date2='+$("#date2").datebox('getValue'),
+		url: '<?php echo $basedir; ?>models/material/mutasi_wip_grid2.php?mat_type=11&date1='+$("#date1").datebox('getValue')+'&date2='+$("#date2").datebox('getValue'),
 	});
 }
 

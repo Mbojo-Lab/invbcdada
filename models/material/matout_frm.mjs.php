@@ -11,8 +11,8 @@ function setdg(){
 		rownumbers:"true",
 		columns:[[  
 			{field:'KdBarang2',title:'Mat. Code',width:80},
-			{field:'NmBarang2',title:'Desc.',width:150},
-			{field:'twhmp',title:'Section',width:100},
+			{field:'NmBarang2',title:'Mat. Name',width:150},
+			{field:'Ket',title:'Specification',width:100},
 			{field:'Sat2',title:'Unit',width:80},
 			{field:'qty',title:'Qty.',width:100,align:'right'}
 		]],
@@ -24,9 +24,12 @@ function setdgCari(){
 	$('#dgCari').datagrid({  
 		width:586,
 		height:315,	
-		fitColumns:"true",
-		rownumbers:"true", 
 		toolbar:"#toolCari",
+		mode:'remote',  
+		rownumbers:true,
+		fitColumns:true,
+		pagination:true,
+		pageList:[25,50,75,100],   
 		columns:[[  
 			{field:'matout_no',title:'Outgoing No.',width:60},
 			{field:'matout_date',title:'Outgoing Date',width:50},
@@ -45,6 +48,7 @@ function insert_menu(row){
 	$('#matout_date').datebox('setValue',row.matout_date);
 	$('#wo_id').val(row.ref_id);
 	$('#wo_no').val(row.ref_no);	
+	$('#cust').val(row.cust);	
 	$('#KdJnsDok').val(row.KdJnsDok);	
 	$('#notes').val(row.notes);	
 	setdg();
@@ -70,7 +74,7 @@ function setComboGrid(){
 		columns:[[  
 			{field:'KdBarang2',title:'Mat. Code',width:60},
 			{field:'NmBarang2',title:'Desc.',width:50},
-			{field:'twhmp',title:'Section',width:50},
+			{field:'Ket',title:'Specification',width:50},
 			{field:'Sat2',title:'Unit',width:50},
 			{field:'qty',title:'Qty',width:50}
 		]],
@@ -85,7 +89,7 @@ function insert_ref(row){
 
 function insert_det(row){
 	$('#NmBarang2').val(row.NmBarang2);
-	$('#twhmp').val(row.twhmp);
+	$('#Ket').val(row.Ket);
 	$('#Sat2').val(row.Sat2);
 	$('#qty').numberbox('setValue',row.qty);
 }
@@ -126,6 +130,7 @@ function simpan(){
 		wo_id: $('#wo_id').val(),
 		wo_no: $('#wo_no').val(),
 		notes: $('#notes').val(),
+		cust: $('#cust').val(),
 		KdJnsDok: $('#KdJnsDok').val(),
 		
 		//FORM LIST DATA BARANG	

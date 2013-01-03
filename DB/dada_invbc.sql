@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50527
 File Encoding         : 65001
 
-Date: 2012-12-26 00:51:45
+Date: 2013-01-03 13:15:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1719,7 +1719,7 @@ CREATE TABLE `log` (
   `nama_user` varchar(20) DEFAULT NULL,
   `ket` text,
   PRIMARY KEY (`no`)
-) ENGINE=InnoDB AUTO_INCREMENT=967 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=969 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of log
@@ -2170,6 +2170,8 @@ INSERT INTO `log` VALUES ('963', '2012-12-25 23:44:13', 'admin', 'Edit matin 2')
 INSERT INTO `log` VALUES ('964', '2012-12-25 23:46:09', 'admin', 'Add initial balance machine & office equipment 5 2012-11-29 12');
 INSERT INTO `log` VALUES ('965', '2012-12-25 23:47:04', 'admin', 'Add scrap in 4');
 INSERT INTO `log` VALUES ('966', '2012-12-25 18:50:57', 'admin', 'logout');
+INSERT INTO `log` VALUES ('967', '2012-12-26 01:20:00', 'admin', 'login');
+INSERT INTO `log` VALUES ('968', '2012-12-25 19:22:54', 'admin', 'logout');
 
 -- ----------------------------
 -- Table structure for `mat_group`
@@ -3584,7 +3586,7 @@ CREATE TABLE `mkt_dohdr` (
   `tot_amount` decimal(15,2) DEFAULT NULL,
   `notes` char(80) NOT NULL DEFAULT '' COMMENT 'Catatan Transaksi Pesanan',
   PRIMARY KEY (`do_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COMMENT='Table Header Pemesanan dari Customer';
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Table Header Pemesanan dari Customer';
 
 -- ----------------------------
 -- Records of mkt_dohdr

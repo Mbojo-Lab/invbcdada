@@ -208,8 +208,8 @@ require_once "matin_frm.cjs.php";
       <td><input name="NmBarang2" type="text" id="NmBarang2" style="width:150px" readonly></td>
     </tr>
 	<tr>
-      <td>Section</td>
-      <td><input name="twhmp" type="text" id="twhmp" style="width:150px" readonly></td>
+      <td>Specification</td>
+      <td><input name="Ket" type="text" id="Ket" style="width:150px" readonly></td>
     </tr>
     <tr>
       <td>Unit</td>

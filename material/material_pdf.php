@@ -135,10 +135,10 @@ $html = '<h2>'.$NmMenu.'</h2>
 		  <th align="center" width="25"><b>No.</b></th>
 		  <th width="80"><b>Mat. Group</b></th>
 		  <th><b>Mat. Code</b></th>
-		  <th width="180"><b>Desc.</b></th>
+		  <th><b>Mat. Name</b></th>
+		  <th width="180"><b>Specification</b></th>
 		  <th width="70"><b>HS No.</b></th>
 		  <th><b>Unit</b></th>
-		  <th><b>Supplier</b></th>
 		</tr>
 		</thead>
 		<tbody>';
@@ -148,10 +148,10 @@ $html .= '<tr>'.
 	  	 '<td align="center" width="25">'.$no.'</td>'.
 		 '<td width="80">'.$r['matgroup_name'].'</td>'.
 		 '<td>'.$r['KdBarang'].'</td>'.
-		 '<td width="180">'.$r['NmBarang'].'</td>'.
+		 '<td>'.$r['NmBarang'].'</td>'.
+		 '<td width="180">'.$r['Ket'].'</td>'.
 		 '<td width="70">'.$r['HsNo'].'</td>'.
 		 '<td>'.$r['Sat'].'</td>'.
-		 '<td>'.$r['cust'].'</td>'.
 		 '</tr>';
 $no+=1;	
 }

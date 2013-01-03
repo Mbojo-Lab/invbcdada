@@ -15,7 +15,7 @@ class MYPDF extends TCPDF {
 	//Page header
 	public function Header() {
 		// Logo
-		$image_file = K_PATH_IMAGES.'yanjin_logo.png';
+		$image_file = K_PATH_IMAGES.'logo.png';
 		$this->Image($image_file, 15, 5, 180, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 		// Set font
 		$this->SetFont('helvetica', 'B', 20);
@@ -171,8 +171,8 @@ $html = '<h2 align="center">'.$NmMenu.'</h2>'.
 		<thead>
 		<tr>
 		  <th align="center" width="25"><b>No.</b></th>
-		  <th width="80"><b>Code</b></th>
-		  <th width="150"><b>Name</b></th>
+		  <th width="80"><b>Part Code</b></th>
+		  <th width="150"><b>Part No</b></th>
 		  <th width="30"><b>Unit</b></th>
 		  <th align="right"><b>Qty.</b></th>
 		  <th align="right"><b>Price</b></th>

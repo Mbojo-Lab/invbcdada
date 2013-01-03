@@ -11,8 +11,8 @@ function setdg(){
 		rownumbers:"true",
 		columns:[[  
 			{field:'KdBarang2',title:'Mat. Code',width:80},
-			{field:'NmBarang2',title:'Desc.',width:150},
-			{field:'twhmp',title:'Section',width:150},
+			{field:'NmBarang2',title:'Mat. Name',width:150},
+			{field:'Ket',title:'Specification',width:150},
 			{field:'Sat2',title:'Unit',width:80},
 			{field:'qty',title:'Qty.',width:100,align:'right'}
 		]],
@@ -52,7 +52,7 @@ function insert_menu(row){
 
 function insert_det(row){	
 	$('#NmBarang2').val(row.NmBarang2);
-	$('#twhmp').val(row.twhmp);
+	$('#Ket').val(row.Ket);
 	$('#Sat2').val(row.Sat2);
 }
 

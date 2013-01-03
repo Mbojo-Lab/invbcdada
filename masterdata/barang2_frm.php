@@ -54,15 +54,15 @@ require_once "mst_frm.cjs.php";
       <td width="114">Name</td>
       <td width="254">
       <input name="NmBarang" type="text" id="NmBarang" class="easyui-validatebox" value="" size="20" required></td>
-    </tr>
-    <tr style="display:none">
-      <td>HS No.</td>
-      <td><input name="HsNo" type="text" id="HsNo" class="easyui-validatebox" value="" size="20" maxlength="20"></td>
-    </tr>
+    </tr>    
 	<tr>
       <td valign="top">Specification</td>
       <td>
         <textarea name="Ket" cols="25" class="easyui-validatebox" id="Ket"></textarea></td>
+    </tr>
+	<tr>
+      <td>HS No.</td>
+      <td><input name="HsNo" type="text" id="HsNo" class="easyui-validatebox" value="" size="20" maxlength="20"></td>
     </tr>
     <tr>
       <td>Unit</td>

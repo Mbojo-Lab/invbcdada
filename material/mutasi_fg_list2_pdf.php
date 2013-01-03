@@ -116,7 +116,7 @@ $mat_type = $_REQUEST["mat_type"];
 $date1 = dmys2ymd($_REQUEST["date1"]);
 $date2 = dmys2ymd($_REQUEST["date2"]);
 
-$q = "SELECT KdBarang,NmBarang,HsNo,Sat,
+$q = "SELECT KdBarang,NmBarang,Ket,Sat,
 	  (
 	  (SELECT IF(SUM(qty)>0,SUM(qty),0) FROM mat_stockcard s WHERE date < '".$date1."' AND s.mat_id = a.KdBarang AND type IN ('B','I'))	  
 	  -
@@ -161,7 +161,8 @@ $html = '<h2>'.$NmMenu.'</h2>'.
 		<tr>
 		  <th align="center" width="25"><b>No.</b></th>
 		  <th width="80"><b>Code</b></th>
-		  <th width="80"><b>Name.</b></th>
+		  <th width="80"><b>Name</b></th>
+		  <th width="80"><b>Specification</b></th>
 		  <th align="center" width="30"><b>Unit</b></th>
 		  <th align="right"><b>Previous Balance</b></th>
 		  <th align="right"><b>In to FG</b></th>
@@ -179,6 +180,7 @@ $html .= '<tr>'.
 	  	 '<td align="center" width="25">'.$no.'</td>'.
 		 '<td width="80">'.$r['KdBarang'].'</td>'.
 		 '<td width="80">'.$r['NmBarang'].'</td>'.
+		 '<td width="80">'.$r['Ket'].'</td>'.
 		 '<td align="center" width="30">'.$r['Sat'].'</td>'.
 		 '<td align="right">'.$r['qty_beg'].'</td>'.
 		 '<td align="right">'.$r['qty_in'].'</td>'.

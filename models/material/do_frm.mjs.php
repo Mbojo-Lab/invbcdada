@@ -12,13 +12,14 @@ function setdg(){
 		columns:[[  		
 			{field:'KdBarang2',title:'Code',width:80},
 			{field:'NmBarang2',title:'Name',width:150},
+			{field:'Ket',title:'Specification',width:150},
 			{field:'Sat2',title:'Unit',width:60},
 			{field:'weight',title:'Weight',width:100,align:'right'},
 			{field:'qty',title:'Qty.',width:100,align:'right'},
 			{field:'price',title:'Price',width:100,align:'right'},
 			{field:'amount',title:'Amount',width:100,align:'right',formatter:function(value){
 				amount=parseFloat(value);
-				amount=amount.toFixed(2);
+				amount=amount.toFixed(4);
 				return amount;
 			}}
 		]],
@@ -86,7 +87,8 @@ function setComboGrid(){
 		pageList:[25,50,75,100],
 		columns:[[  
 			{field:'KdBarang2',title:'Code',width:60},
-			{field:'NmBarang2',title:'Name',width:50},
+			{field:'NmBarang2',title:'Name',width:80},
+			{field:'Ket',title:'Specification',width:80},
 			{field:'Sat2',title:'Unit',width:50}
 		]],
 		onClickRow:function(index,row){insert_det(row)}  
@@ -100,9 +102,9 @@ function insert_ref(row){
 	setComboGrid();
 }
 
-function insert_det(row){
-	$('#PartNo').val(row.PartNo);
+function insert_det(row){	
 	$('#NmBarang2').val(row.NmBarang2);
+	$('#Ket').val(row.Ket);
 	$('#Sat2').val(row.Sat2);
 	$('#qty').numberbox('setValue',row.qty);
 	$('#price').numberbox('setValue',row.price);

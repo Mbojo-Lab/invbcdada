@@ -51,7 +51,7 @@ if ($req=='menu') {
 	$offset = ($page-1)*$rows;
 	$result = array();
 	
-	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty, FORMAT(qty_bal, 2) AS qty_bal
+	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,Ket,Sat AS Sat2,FORMAT(qty, 2) AS qty, FORMAT(qty_bal, 2) AS qty_bal
 		  FROM mat_opnamedet a 
 		  LEFT JOIN mst_barang b ON KdBarang = mat_id 
 		  LEFT JOIN mat_opnamehdr c ON c.opname_id=a.opname_id
@@ -77,7 +77,7 @@ if ($req=='menu') {
 	$opname_date1=$thn."-".$bln."-01";
 	$opname_date2=$thn."-".$bln."-".GetLastDayofMonth($thn, $bln);
 	
-	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty, FORMAT(qty_bal, 2) AS qty_bal
+	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,Ket,Sat AS Sat2,FORMAT(qty, 2) AS qty, FORMAT(qty_bal, 2) AS qty_bal
 		  FROM mat_opnamedet a 
 		  LEFT JOIN mst_barang b ON KdBarang = mat_id 
 		  LEFT JOIN mat_opnamehdr c ON c.opname_id=a.opname_id
@@ -91,7 +91,7 @@ if ($req=='menu') {
 		  
 } else if ($req=='listrpt') {	
 	$opname_id = $_REQUEST["opname_id"];
-	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty, FORMAT(qty_bal, 2) AS qty_bal, FORMAT(qty_diff, 2) AS qty_diff
+	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,Ket,Sat AS Sat2,FORMAT(qty, 2) AS qty, FORMAT(qty_bal, 2) AS qty_bal, FORMAT(qty_diff, 2) AS qty_diff
 		  FROM mat_opnamedet a 
 		  LEFT JOIN mst_barang b ON KdBarang = mat_id 
 		  WHERE opname_id='$opname_id' 
@@ -108,7 +108,7 @@ if ($req=='menu') {
 	$opname_date1=$thn."-".$bln."-01";
 	$opname_date2=$thn."-".$bln."-".GetLastDayofMonth($thn, $bln);
 	
-	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty,
+	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,Ket,Sat AS Sat2,FORMAT(qty, 2) AS qty,
 		  (
 		  (SELECT IF(SUM(qty)>0,SUM(qty),0) FROM mat_stockcard s WHERE date < '".$opname_date2."' AND s.mat_id = a.mat_id AND type IN ('B','I') AND wh_id = '".$wh_id."')
 		  -

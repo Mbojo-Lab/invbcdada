@@ -44,8 +44,8 @@ $('#KdBarang2').combogrid({
 	pageList:[25,50,75,100], 
 	columns:[[  
 		{field:'KdBarang2',title:'Mat. Code',width:50},
-		{field:'NmBarang2',title:'Desc.',width:50},
-		{field:'twhmp',title:'Section',width:50},
+		{field:'NmBarang2',title:'Mat. Name',width:50},
+		{field:'Ket',title:'Specification',width:50},
 		{field:'Sat2',title:'Unit',width:50}
 	]],
 	onSelect:function(index,row){insert_det(row)}  
@@ -234,6 +234,7 @@ $('#tl2Ubh2').click(function(){
 			row: { 
 				KdBarang2: $('#KdBarang2').combogrid('getValue'),
 				NmBarang2: $('#NmBarang2').val(),	
+				Ket: $('#Ket').val(),	
 				Sat2: $('#Sat2').val(),
 				qty: nformat2($('#qty').numberbox('getValue'),2)
 				}
@@ -246,6 +247,7 @@ $('#tl2Sim').click(function(){
 	$('#dg').datagrid('appendRow',{		
 		KdBarang2: $('#KdBarang2').combogrid('getValue'),
 		NmBarang2: $('#NmBarang2').val(),
+		Ket: $('#Ket').val(),	
 		Sat2: $('#Sat2').val(),
 		qty: nformat2($('#qty').numberbox('getValue'),2)
 	});

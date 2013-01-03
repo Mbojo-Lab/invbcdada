@@ -13,11 +13,10 @@ function setdg(){
 		columns:[[  
 			{field:'KdBarang2',title:'Code',width:80},
 			{field:'NmBarang2',title:'Name',width:150},
+			{field:'Ket',title:'Specification',width:150},
 			{field:'Sat2',title:'Unit',width:80},
 			{field:'qty_bal',title:'Qty. Balance',width:100,align:'right'},
-			{field:'qty',title:'Qty. Opname',width:100,align:'right'}/*,
-			{field:'price',title:'Price',width:100,align:'right'},
-			{field:'amount',title:'Amount',width:100,align:'right'}*/
+			{field:'qty',title:'Qty. Opname',width:100,align:'right'}
 		]],
 		url: '<?php echo $basedir; ?>models/material/stock_adjust_grid.php?req=list2&bln='+bln+'&thn='+thn+'&wh_id='+wh_id
 	});
@@ -37,11 +36,10 @@ function loaddg(){
 		columns:[[  
 			{field:'KdBarang2',title:'Code',width:80},
 			{field:'NmBarang2',title:'Name',width:150},
+			{field:'Ket',title:'Specification',width:150},
 			{field:'Sat2',title:'Unit',width:80},
 			{field:'qty_bal',title:'Qty. Balance',width:100,align:'right'},
-			{field:'qty',title:'Qty. Opname',width:100,align:'right'}/*,
-			{field:'price',title:'Price',width:100,align:'right'},
-			{field:'amount',title:'Amount',width:100,align:'right'}*/
+			{field:'qty',title:'Qty. Opname',width:100,align:'right'}
 		]],
 		url: '<?php echo $basedir; ?>models/material/stock_adjust_grid.php?req=load&bln='+bln+'&thn='+thn+'&wh_id='+wh_id
 	});

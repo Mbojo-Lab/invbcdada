@@ -35,11 +35,11 @@ if ($rs){
 }
 .kolom3 {
 	float:left;
-	width:90px;	
+	width:80px;	
 }
 .kolom4 {
 	float:left;
-	width:140px;	
+	width:120px;	
 }
 .kolom5 {
 	float:left;
@@ -47,7 +47,7 @@ if ($rs){
 }
 .kolom6 {
 	float:left;
-	width:150px;	
+	width:130px;	
 	/*border:1px solid #000;*/
 }
 </style>
@@ -59,8 +59,8 @@ if ($rs){
 <script type="text/javascript" src="<?php echo $basedir; ?>models/js/global.format.js">disableSelection(document.body); 
 </script>
 <?php 
-require_once "matout_frm.mjs.php";
-require_once "matout_frm.cjs.php";
+require_once "do_frm.mjs.php";
+require_once "do_frm.cjs.php";
 ?>
 </head>
 <body oncontextmenu="return false;" leftmargin="20" rightmargin="20" topmargin="15" bottommargin="20"> 
@@ -68,60 +68,52 @@ require_once "matout_frm.cjs.php";
 <form id="fm" method="post" onSubmit="return false">
 	<input type="hidden" id="aksi" name="aksi">
     <div class="hdr">
-      <span class="kolom1">Outgoing No. </span><span class="kolom2">
-      <input type="hidden" id="matout_id" name="matout_id">
-      <input type="text" id="matout_no" name="matout_no" style="width:100px">    
+      <span class="kolom1">DO No. </span><span class="kolom2">
+      <input type="hidden" id="do_id" name="do_id">
+      <input type="text" id="do_no" name="do_no" style="width:100px">    
       </span>
-      <span class="kolom3">Outgoing Type</span>
+      <span class="kolom3">DO Date </span>
       <span class="kolom4">
-       <select name="matout_type" id="matout_type" style="width:100px">
-         <option value=""></option>
-         <?php
-            $run = $pdo->query("SELECT * FROM mst_out_type ORDER BY matout_type");
-            $rs = $run->fetchAll(PDO::FETCH_ASSOC);
-            foreach($rs as $r)
-                echo "<option value=\"".$r['matout_type']."\">".$r['matout_name']."</option>";
-        ?>
-       </select>
+        <input type="text" id="do_date" name="do_date" class="easyui-datebox" required maxlength="10" tabindex="10" style="width:100px">
       </span>
-      <span class="kolom5">Outgoing Date</span>
+      <span class="kolom5">Customer</span>
       <span class="kolom6">
-      <input type="text" id="matout_date" name="matout_date" class="easyui-datebox" required maxlength="10" tabindex="10" style="width:100px">
-      </span>
-    </div> 
-    <div class="hdr">      
-      <span class="kolom1">WO No. </span>
-      <span class="kolom2">
-      <input type="hidden" id="wo_id" name="wo_id" style="width:100px">
-      <input name="wo_no" id="wo_no" style="width:100px"> 
-      </span>
-	  <span class="kolom3">Customer</span>
-      <span class="kolom4">
-      <select name="cust" id="cust" style="width:120px">
+      <select name="cust" id="cust" style="width:150px">
         <option value=""></option>
         <?php
-            $run = $pdo->query("SELECT NmPrshn FROM mst_perusahaan WHERE TpPrshn IN ('c') ORDER BY NmPrshn");
+            $run = $pdo->query("SELECT NmPrshn FROM mst_perusahaan WHERE TpPrshn='c' ORDER BY NmPrshn");
             $rs = $run->fetchAll(PDO::FETCH_ASSOC);
             foreach($rs as $r)
                 echo "<option value=\"".$r['NmPrshn']."\">".$r['NmPrshn']."</option>";
         ?>
       </select></span>
-      <span class="kolom5">Jenis BC</span>
+    </div>        
+    <div class="hdr">
+      <span class="kolom1">Vehicle No.</span>
+      <span class="kolom2"><input type="text" name="vehicle_no" id="vehicle_no" style="width:100px"></span>
+      <span class="kolom3">Driver</span>
+      <span class="kolom4"><input type="text" name="driver" id="driver" style="width:100px"></span>
+      <span class="kolom5">PO Cust. No. </span>
       <span class="kolom6">
+      <input type="hidden" id="so_id" name="so_id" style="width:100px">
+      <input name="so_no" id="so_no" style="width:150px"></span>  
+    </div>
+	<div class="hdr">
+      <span class="kolom1">
+        Jenis BC
+      </span>
+      <span class="kolom2">
       <select name="KdJnsDok" id="KdJnsDok" style="width:80px">
         <option value=""></option>
         <?php
-            $run = $pdo->query("SELECT * FROM jenis_dok WHERE KdJnsDok IN ('3','4','6','9') ORDER BY KdJnsDok");
+            $run = $pdo->query("SELECT * FROM jenis_dok WHERE KdJnsDok IN ('3','4','6','7','9') ORDER BY KdJnsDok");
             $rs = $run->fetchAll(PDO::FETCH_ASSOC);
             foreach($rs as $r)
                 echo "<option value=\"".$r['KdJnsDok']."\">".$r['UrJnsDok']."</option>";
         ?>
       </select>
-      </span>      
-      <span class="kolom5"></span>
-      <span class="kolom6">
       </span>
-    </div>            
+	</div>  
     <!--
     <div class="hdr">
       <span class="kolom1">
@@ -152,7 +144,7 @@ require_once "matout_frm.cjs.php";
     <a href="javascript:void(0)" id="tl2Hps" class="easyui-linkbutton" iconCls="icon-remove" plain="true" title="Hapus">Delete</a>  
 </div>        
 <div class="hdr" style="padding-top:10px">Notes: 
-  <textarea id="notes" name="notes" style="width:700px; height:70px;"></textarea></div>    
+  <textarea id="notes" name="notes" style="width:700px; height:40px;"></textarea></div>    
 <input type="submit" id="btnSubmit1" name="btnSubmit1" style="display:none">
 </form>     
 
@@ -160,16 +152,12 @@ require_once "matout_frm.cjs.php";
 	<form name="fm2" id="fm2" method="post" onSubmit="return false">
  	<table>
     <tr>
-      <td width="115">Mat. Code</td>
+      <td width="115">Part Code</td>
       <td width="319"><input name="KdBarang3" type="hidden" id="KdBarang3" class="easyui-validatebox" value=""><input id="KdBarang2" name="KdBarang2" type="text" style="width:100px"></td>
     </tr>
     <tr>
-      <td>Mat. Name</td>
+      <td>Part No</td>
       <td><input name="NmBarang2" type="text" id="NmBarang2" style="width:150px" readonly></td>
-    </tr>
-	<tr>
-      <td>Specification</td>
-      <td><input name="Ket" type="text" id="Ket" style="width:150px" readonly></td>
     </tr>
     <tr>
       <td>Unit</td>
@@ -185,9 +173,21 @@ require_once "matout_frm.cjs.php";
           </select>
       </td>
     </tr>
+	<tr>
+      <td>Weight</td>
+      <td><input name="weight" type="text" id="weight" value="" style="width:100px"></td>
+    </tr>
     <tr>
-      <td>Quantity</td>
+      <td>Qty</td>
       <td><input name="qty" type="text" id="qty" value="" style="width:100px"></td>
+    </tr>
+    <tr>
+      <td>Price</td>
+      <td><input name="price" type="text" id="price" value="" style="width:100px"></td>
+    </tr>
+    <tr>
+      <td>Amount</td>
+      <td><input name="amount" type="text" id="amount" value="" style="width:100px" readonly></td>
     </tr>
     </table>
     <input type="submit" id="btnSubmit2" name="btnSubmit2" style="display:none">
@@ -203,10 +203,9 @@ require_once "matout_frm.cjs.php";
 <div id="toolCari">  
     Search
     <select id="pilcari" name="pilcari">
-    	<option value="matout_no">Outgoing No.</option>
-        <option value="matout_date">Outgoing Date</option>
-        <option value="matout_name">Outgoing Type</option>
-        <option value="wo_no">WO No.</option>
+    	<option value="matout_no">DO No.</option>
+        <option value="matout_date">DO Date</option>
+        <option value="ref_no">PO Cust. No.</option>
     </select> 
     <input type="text" id="txtcari" name="txtcari" style="width:100px">
     <a href="#" id="dtlCri" class="easyui-linkbutton" iconCls="icon-search"></a>

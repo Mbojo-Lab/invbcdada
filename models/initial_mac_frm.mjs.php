@@ -36,6 +36,7 @@ function setdgCari(){
 		onClickRow:function(index,row){insert_menu(row)}
 		
 	});
+	
 }
 
 function setBarang(){

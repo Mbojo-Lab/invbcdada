@@ -11,7 +11,8 @@ function setdg(){
 		pageList:[25,50,75,100],
 		frozenColumns:[[  
 			{field:'KdBarang',title:'Mat. Code',width:80,rowspan:2},  
-			{field:'NmBarang',title:'Desc.',width:100,rowspan:2},   
+			{field:'NmBarang',title:'Mat. Name',width:100,rowspan:2},   
+			{field:'Ket',title:'Specification',width:100,rowspan:2},   
 			{field:'Sat',title:'Unit',width:50,rowspan:2}, 
 		]],
 		columns:[[  					

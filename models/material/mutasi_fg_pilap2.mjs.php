@@ -12,6 +12,7 @@ function setdg(){
 		frozenColumns:[[  
 			{field:'KdBarang',title:'Code',width:80}, 
 			{field:'NmBarang',title:'Name',width:100},   
+			{field:'Ket',title:'Specification',width:100},   
 			{field:'Sat',title:'Unit',width:50}, 
 		]],
 		columns:[[  					

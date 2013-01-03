@@ -159,6 +159,10 @@ require_once "do_frm.cjs.php";
       <td>Name</td>
       <td><input name="NmBarang2" type="text" id="NmBarang2" style="width:150px" readonly></td>
     </tr>
+	<tr>
+      <td>Specification</td>
+      <td><input name="Ket" type="text" id="Ket" style="width:150px" readonly></td>
+    </tr>
     <tr>
       <td>Unit</td>
       <td>

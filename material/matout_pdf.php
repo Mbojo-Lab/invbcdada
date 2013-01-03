@@ -15,7 +15,7 @@ class MYPDF extends TCPDF {
 	//Page header
 	public function Header() {
 		// Logo
-		$image_file = K_PATH_IMAGES.'yanjin_logo.png';
+		$image_file = K_PATH_IMAGES.'logo.png';
 		$this->Image($image_file, 15, 5, 180, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 		// Set font
 		$this->SetFont('helvetica', 'B', 20);
@@ -126,7 +126,6 @@ $matout_id = $_REQUEST["matout_id"];
 
 $q = "SELECT *,DATE_FORMAT(matout_date,'%d/%m/%Y') AS matout_date, a.notes AS notes
 	  FROM mat_outhdr a 
-	  LEFT JOIN ppic_wohdr b ON b.wo_id=a.wo_id
 	  INNER JOIN mst_out_type c ON c.matout_type=a.matout_type ";
 $q .= "WHERE matout_id LIKE '$matout_id' ";	  
 $q .= "ORDER BY matout_no, matout_date ASC";
@@ -134,7 +133,7 @@ $runh=$pdo->query($q);
 $rsh=$runh->fetchAll(PDO::FETCH_ASSOC);
 
 
-$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty
+$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,Ket,Sat AS Sat2,FORMAT(qty, 2) AS qty
 	  FROM mat_outdet a 
 	  LEFT JOIN mst_barang b ON KdBarang = mat_id 
 	  WHERE matout_id='$matout_id' 
@@ -162,7 +161,7 @@ $html = '<h2 align="center">'.$NmMenu.'</h2>'.
 		  <td width="80"><b>'.$rsh[0]['matout_date'].'</b></td>
 		  <td width="80"><b>WO No</b></td>
 		  <td width="10"><b>:</b></td>
-		  <td width="150"><b>'.$rsh[0]['wo_no'].'</b></td>
+		  <td width="150"><b>'.$rsh[0]['ref_no'].'</b></td>
 		  <td width="80"><b></b></td>
 		  <td width="10"><b></b></td>
 		  <td width="100"><b></b></td>
@@ -174,7 +173,8 @@ $html = '<h2 align="center">'.$NmMenu.'</h2>'.
 		<tr>
 		  <th align="center" width="25"><b>No.</b></th>
 		  <th width="80"><b>Mat. Code</b></th>		  
-		  <th width="150"><b>Desc.</b></th>
+		  <th width="150"><b>Mat. Name</b></th>
+		  <th width="150"><b>Specification</b></th>
 		  <th width="30"><b>Unit</b></th>
 		  <th align="right"><b>Qty.</b></th>
 		</tr>
@@ -186,6 +186,7 @@ $html .= '<tr>'.
 	  	 '<td align="center" width="25">'.$no.'</td>'.
 		 '<td width="80">'.$r['KdBarang2'].'</td>'.
 		 '<td width="150">'.$r['NmBarang2'].'</td>'.
+		 '<td width="150">'.$r['Ket'].'</td>'.
 		 '<td width="30">'.$r['Sat2'].'</td>'.
 		 '<td align="right">'.$r['qty'].'</td>'.
 		 '</tr>';

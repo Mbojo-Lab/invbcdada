@@ -15,7 +15,7 @@ class MYPDF extends TCPDF {
 	//Page header
 	public function Header() {
 		// Logo
-		$image_file = K_PATH_IMAGES.'yanjin_logo.png';
+		$image_file = K_PATH_IMAGES.'logo.png';
 		$this->Image($image_file, 15, 5, 180, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 		// Set font
 		$this->SetFont('helvetica', 'B', 20);
@@ -125,7 +125,7 @@ $pdf->AddPage();
 $matout_id = $_REQUEST["matout_id"];
 
 $q = "SELECT *,DATE_FORMAT(matout_date,'%d/%m/%Y') AS matout_date, a.notes AS notes
-		  FROM mat_outhdr a WHERE matout_type='3' ";
+		  FROM mat_outhdr a WHERE 1=1 ";
 $q .= "AND matout_id LIKE '$matout_id' ";	  
 $q .= "ORDER BY matout_no, matout_date ASC";
 $runh=$pdo->query($q);	
@@ -150,9 +150,9 @@ $html = '<h2 align="center">'.$NmMenu.'</h2>'.
 		  <td width="80"><b>Scrap Out Date</b></td>
 		  <td width="10"><b>:</b></td>
 		  <td width="150"><b>'.$rsh[0]['matout_date'].'</b></td>
-		  <td width="80"><b>Ref No</b></td>
+		  <td width="80"><b></b></td>
 		  <td width="10"><b>:</b></td>
-		  <td width="100"><b>'.$rsh[0]['ref_no'].'</b></td>
+		  <td width="100"><b></b></td>
 		</tr>
 		<tr><td colspan="3"></td></tr>
 		</table>'.

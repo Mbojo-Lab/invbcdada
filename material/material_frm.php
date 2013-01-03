@@ -58,8 +58,12 @@ require_once "mst_frm.cjs.php";
       <td width="254"><input name="KdBarang0" type="hidden" id="KdBarang0" class="easyui-validatebox" value="">        <input name="KdBarang" type="text" id="KdBarang" class="easyui-validatebox" value="" size="20" maxlength="20" required></td>
     </tr>
     <tr>
-      <td>Desc.</td>
+      <td>Mat. Name</td>
       <td><input name="NmBarang" type="text" id="NmBarang" class="easyui-validatebox" value="" size="30" maxlength="30" required></td>
+    </tr>
+	<tr>
+      <td>Description</td>
+      <td><input name="Ket" type="text" id="Ket" class="easyui-validatebox" value="" size="30" maxlength="30" required></td>
     </tr>
     <tr style="display:none">
       <td>Section</td>

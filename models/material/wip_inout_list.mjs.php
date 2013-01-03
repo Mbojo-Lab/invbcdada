@@ -39,9 +39,9 @@ function setdg(){
 				loadMsg:'',  
 				height:'auto',  
 				columns:[[  
-					{field:'KdBarang2',title:'Code',width:80},  
-					//{field:'PartNo',title:'Name.',width:80}, 
-					{field:'NmBarang2',title:'Name.',width:100},   
+					{field:'KdBarang2',title:'Code',width:80}, 
+					{field:'NmBarang2',title:'Name.',width:100},
+					{field:'Ket',title:'Specification',width:100},   
 					{field:'qty',title:'Qty.',width:100,align:'right'} 
 				]],  
 				onResize:function(){  

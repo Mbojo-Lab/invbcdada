@@ -13,6 +13,7 @@ function setdg(){
 		columns:[[  
 			{field:'KdBarang2',title:'Code',width:80},
 			{field:'NmBarang2',title:'Name',width:150},
+			{field:'Ket',title:'Specification',width:150},
 			{field:'Sat2',title:'Unit',width:80},
 			{field:'qty',title:'Qty.',width:100,align:'right'}
 		]],
@@ -57,6 +58,7 @@ function insert_menu(row){
 
 function insert_det(row){
 	$('#NmBarang2').val(row.NmBarang2);
+	$('#Ket').val(row.Ket);
 	$('#Sat2').val(row.Sat2);
 }
 

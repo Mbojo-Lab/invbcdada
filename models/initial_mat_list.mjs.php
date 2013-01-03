@@ -34,7 +34,8 @@ function setdg(){
 				height:'auto',  
 				columns:[[  
 					{field:'KdBarang2',title:'Mat Code',width:80},  					
-					{field:'NmBarang2',title:'Desc.',width:100},   
+					{field:'NmBarang2',title:'Mat. Name',width:100},   
+					{field:'Ket',title:'Specification',width:100},   
 					{field:'Sat2',title:'Unit',width:80}, 
 					{field:'qty',title:'Qty.',width:100,align:'right'} 
 				]],  

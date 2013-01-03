@@ -15,6 +15,11 @@ if ($req=='menu'){
 			$q .= "AND mat_type LIKE '%$txtcari%' ";	  
 	}  
 	$q .= "ORDER BY mat_type, date ASC";
+	
+	$run=$pdo->query($q);	
+	$rs=$run->fetchAll(PDO::FETCH_ASSOC);
+	echo json_encode($rs);
+	
 } else if ($req=='dgDet') {
 	$mat_type = $_REQUEST["mat_type"];
 	$key = $_REQUEST["q"];

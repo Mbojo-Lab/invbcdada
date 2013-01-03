@@ -127,7 +127,7 @@ jam();
 </tr>
 <tr height="10" class="footer">
   <th align="center" class="welcome"><a class="easyui-linkbutton" plain="true">Versi 4.0</a></th>
-  <th align="center"><a class="easyui-linkbutton" plain="true">&copy; 2012 PT. ASC</a> </th>
+  <th align="center"><a class="easyui-linkbutton" plain="true">&copy; 2012 CV. Data Media Computindo</a> </th>
   <th align="right" style="width:150px; padding-right:10px;"><a class="easyui-linkbutton" plain="true">Bandung</a></th>
 </tr>
 </table>

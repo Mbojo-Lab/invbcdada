@@ -13,6 +13,7 @@ function setdg(){
 		columns:[[  
 			{field:'KdBarang2',title:'Code',width:80},
 			{field:'NmBarang2',title:'Name',width:150},
+			{field:'Ket',title:'Specification',width:150},
 			{field:'Sat2',title:'Unit',width:80},
 			{field:'weight',title:'Weight',width:100,align:'right'},
 			{field:'qty',title:'Qty.',width:100,align:'right'},
@@ -63,9 +64,9 @@ function insert_menu(row){
 	$('#btnPrint').show();	
 }
 
-function insert_det(row){
-	$('#PartNo').val(row.PartNo);
+function insert_det(row){	
 	$('#NmBarang2').val(row.NmBarang2);
+	$('#Ket').val(row.Ket);
 	$('#Sat2').val(row.Sat2);
 }
 

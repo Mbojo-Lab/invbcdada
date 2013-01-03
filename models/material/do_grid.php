@@ -39,7 +39,7 @@ if ($req=='menu'){
 	echo json_encode($result);
 } else if ($req=='list') {	
 	$do_id = $_REQUEST["do_id"];
-	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2,NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,weight,FORMAT(a.qty, 2) AS qty,FORMAT(a.price, 2) AS price,FORMAT(a.qty*a.price, 2) AS amount
+	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2,NmBarang AS NmBarang2,Ket,Sat AS Sat2,weight,FORMAT(a.qty, 2) AS qty,FORMAT(a.price, 4) AS price,FORMAT(a.qty*a.price, 4) AS amount
 		  FROM mat_outdet a 
 		  LEFT JOIN mat_outhdr b ON b.matout_id=a.matout_id
 		  LEFT JOIN mst_barang c ON KdBarang = a.mat_id 		 
@@ -63,7 +63,7 @@ if ($req=='menu'){
 } else if ($req=='dgDet') {
 	$so_id = $_REQUEST["so_id"];
 	$do_id = $_REQUEST["do_id"];
-	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2,NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty_so,FORMAT(price, 2) AS price,
+	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2,NmBarang AS NmBarang2,Ket,Sat AS Sat2,FORMAT(qty, 2) AS qty_so,FORMAT(price, 2) AS price,
 		 (qty-
 		 (SELECT IF(SUM(qty)>0,SUM(qty),0) FROM mkt_dodet da LEFT JOIN mkt_dohdr db ON db.do_id=da.do_id WHERE db.so_id = a.so_id AND da.fg_id = a.fg_id AND da.do_id NOT IN ('$do_id'))
 		 ) AS qty_bal,
@@ -99,7 +99,7 @@ if ($req=='menu'){
 	$offset = ($page-1)*$rows;
 	$result = array();
 	
-	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2
+	$q = "SELECT KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,Ket,Sat AS Sat2
 		  FROM mst_barang  
 		  WHERE TpBarang='0' ";		  
 	

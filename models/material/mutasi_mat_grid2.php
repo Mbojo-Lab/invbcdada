@@ -13,7 +13,7 @@ $rows = isset($_POST['rows']) ? intval($_POST['rows']) : 25;
 $offset = ($page-1)*$rows;
 $result = array();
 
-$q = "SELECT KdBarang,NmBarang,HsNo,Sat,
+$q = "SELECT KdBarang,NmBarang,Ket,Sat,
 	  (
 	  (SELECT IF(SUM(qty)>0,SUM(qty),0) FROM mat_stockcard s WHERE date < '".$date1."' AND s.mat_id = a.KdBarang AND type = 'B')
 	  +

@@ -22,6 +22,7 @@ $WBar=$_REQUEST['WBar'];
 $Finish=$_REQUEST['Finish'];
 $twhmp=$_REQUEST['twhmp'];
 $Sat=$_REQUEST['Sat'];
+$Ket=$_REQUEST['Ket'];
 
 $aksi=$_REQUEST['aksi'];
 
@@ -44,11 +45,11 @@ try {
 			$sql[]="INSERT INTO mst_barang (	
 					  KdBarang,TpBarang,MatGroup,NmBarang,HsNo,
 					  DieNo,UWm,LPc,WPcs,LBar,PcBar,
-					  WBar,Finish,twhmp,Sat
+					  WBar,Finish,twhmp,Sat,Ket
 					) VALUES (
 					  '$KdBarang','$TpBarang','$MatGroup','$NmBarang','$HsNo',
 					  '$DieNo','$UWm','$LPc','$WPcs','$LBar','$PcBar',
-					  '$WBar','$Finish','$twhmp','$Sat'
+					  '$WBar','$Finish','$twhmp','$Sat','$Ket'
 					)";					
 			
 			$ketlog="add $JnsBarang $KdBarang";
@@ -73,7 +74,8 @@ try {
 				WBar='$WBar',
 				Finish='$Finish',
 				twhmp='$twhmp',
-				Sat='$Sat'
+				Sat='$Sat',
+				Ket='$Ket'
 				WHERE KdBarang='$KdBarang0'";
 				
 		$ketlog="edit $JnsBarang $KdBarang0";

@@ -15,7 +15,7 @@ class MYPDF extends TCPDF {
 	//Page header
 	public function Header() {
 		// Logo
-		$image_file = K_PATH_IMAGES.'yanjin_logo.png';
+		$image_file = K_PATH_IMAGES.'logo.png';
 		$this->Image($image_file, 15, 5, 180, '', 'PNG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 		// Set font
 		$this->SetFont('helvetica', 'B', 20);
@@ -124,7 +124,7 @@ $pdf->AddPage();
 //Data loading
 $wh_id = $_REQUEST["wh_id"];
 $date = dmys2ymd($_REQUEST["date"]);
-$q = "SELECT wh_name,DATE_FORMAT(date,'%d/%m/%Y') AS date,KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,HsNo AS HsNo2,Sat AS Sat2,FORMAT(qty, 2) AS qty
+$q = "SELECT wh_name,DATE_FORMAT(date,'%d/%m/%Y') AS date,KdBarang AS KdBarang3,KdBarang AS KdBarang2, NmBarang AS NmBarang2,Ket,Sat AS Sat2,FORMAT(qty, 2) AS qty
 	  FROM mst_barang a 
 	  LEFT JOIN mat_stockcard b ON mat_id = KdBarang 
 	  LEFT JOIN mat_warehouse c ON c.wh_id=b.wh_id  
@@ -154,6 +154,7 @@ $html = '<h2 align="center">'.$NmMenu.'</h2>'.
 		  <th align="center" width="25"><b>No.</b></th>
 		  <th width="80"><b>Code</b></th>
 		  <th width="150"><b>Name</b></th>
+		  <th width="150"><b>Specification</b></th>
 		  <th width="30"><b>Unit</b></th>
 		  <th align="right"><b>Qty.</b></th>
 		</tr>
@@ -164,7 +165,8 @@ foreach ($rs as $r){
 $html .= '<tr>'.
 	  	 '<td align="center" width="25">'.$no.'</td>'.
 		 '<td width="80">'.$r['KdBarang2'].'</td>'.
-		 '<td width="150">'.$r['NmBarang2'].'</td>'.
+		 '<td width="150">'.$r['NmBarang2'].'</td>'.		 
+		 '<td width="150">'.$r['Ket'].'</td>'.
 		 '<td width="30">'.$r['Sat2'].'</td>'.
 		 '<td align="right">'.$r['qty'].'</td>'.
 		 '</tr>';

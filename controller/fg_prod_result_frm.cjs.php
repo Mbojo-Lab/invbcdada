@@ -53,6 +53,7 @@ $('#KdBarang2').combogrid({
 	columns:[[  
 		{field:'KdBarang2',title:'Code',width:60},
 		{field:'NmBarang2',title:'Name',width:50},
+		{field:'Ket',title:'Specification',width:50},
 		{field:'Sat2',title:'Unit',width:50}
 	]],
 	onSelect:function(index,row){insert_det(row)}  
@@ -245,6 +246,7 @@ $('#tl2Ubh2').click(function(){
 			row: { 
 				KdBarang2: $('#KdBarang2').combogrid('getValue'),	
 				NmBarang2: $('#NmBarang2').val(),	
+				Ket: $('#Ket').val(),	
 				Sat2: $('#Sat2').val(),
 				weight: nformat2($('#weight').numberbox('getValue'),2),
 				qty: nformat2($('#qty').numberbox('getValue'),2),
@@ -259,6 +261,7 @@ $('#tl2Sim').click(function(){
 	$('#dg').datagrid('appendRow',{		
 		KdBarang2: $('#KdBarang2').combogrid('getValue'),
 		NmBarang2: $('#NmBarang2').val(),	
+		Ket: $('#Ket').val(),	
 		Sat2: $('#Sat2').val(),
 		weight: nformat2($('#weight').numberbox('getValue'),2),
 		qty: nformat2($('#qty').numberbox('getValue'),2),		

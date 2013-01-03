@@ -36,12 +36,11 @@ function setdg(){
 				loadMsg:'',  
 				height:'auto',  
 				columns:[[  
-					{field:'KdBarang2',title:'Mat. Code',width:80},  
-					//{field:'PartNo',title:'Name.',width:80}, 
-					{field:'NmBarang2',title:'Desc',width:100},   
+					{field:'KdBarang2',title:'Mat. Code',width:80},
+					{field:'NmBarang2',title:'Mat. Name',width:100},   
+					{field:'Ket',title:'Specification',width:100},   
 					{field:'Sat2',title:'Unit',width:80}, 
 					{field:'qty',title:'Quantity',width:100,align:'right'}
-					//{field:'price',title:'Price',width:100}  
 				]],  
 				onResize:function(){  
 					$('#dg').datagrid('fixDetailRowHeight',index);  

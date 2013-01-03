@@ -141,7 +141,7 @@ if (!defined('K_TCPDF_EXTERNAL_CONFIG')) {
 	/**
 	 * image logo
 	 */
-	define ('PDF_HEADER_LOGO', 'yanjin_logo.png');
+	define ('PDF_HEADER_LOGO', 'logo.png');
 
 	/**
 	 * header logo image width [mm]

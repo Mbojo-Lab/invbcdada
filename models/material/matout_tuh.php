@@ -13,6 +13,7 @@ $matout_date=dmys2ymd($_REQUEST['matout_date']);
 $wo_id=$_REQUEST['wo_id'];
 $wo_no=$_REQUEST['wo_no'];
 $notes=$_REQUEST['notes'];
+$cust=$_REQUEST['cust'];
 $KdJnsDok=$_REQUEST['KdJnsDok'];
 
 
@@ -40,10 +41,10 @@ try {
 		//TAMBAH HEADER
 		$sql[] = "INSERT INTO mat_outhdr (
 				  matout_id,matout_type,matout_no,matout_date,ref_id,ref_no,
-				  tot_qty,notes,KdJnsDok
+				  tot_qty,notes,cust,KdJnsDok
 				  ) VALUES (
 				  '$matout_id','$matout_type','$matout_no','$matout_date','$wo_id','$wo_no',
-				  '$tot_qty','$notes','$KdJnsDok'
+				  '$tot_qty','$notes','$cust','$KdJnsDok'
 				  )";	
 		//AKHIR TAMBAH HEADER
 		
@@ -68,10 +69,10 @@ try {
 		//UBAH HEADER
 		$sql[] = "INSERT INTO mat_outhdr (
 				  matout_id,matout_type,matout_no,matout_date,ref_id,ref_no,
-				  tot_qty,notes,KdJnsDok
+				  tot_qty,notes,cust,KdJnsDok
 				  ) VALUES (
 				  '$matout_id','$matout_type','$matout_no','$matout_date','$wo_id','$wo_no',
-				  '$tot_qty','$notes','$KdJnsDok'
+				  '$tot_qty','$notes','$cust','$KdJnsDok'
 				  )";	
 		//AKHIR UBAH HEADER		
 		//UBAH DETAIL	

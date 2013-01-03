@@ -128,12 +128,12 @@ require_once "stock_opnamemat_frm.cjs.php";
       <td width="319"><input name="KdBarang3" type="hidden" id="KdBarang3" class="easyui-validatebox" value=""><input id="KdBarang2" name="KdBarang2" type="text" style="width:100px"></td>
     </tr>
     <tr>
-      <td>Desc.</td>
+      <td>Mat. Name</td>
       <td><input name="NmBarang2" type="text" id="NmBarang2" style="width:150px" readonly></td>
     </tr>
 	<tr>
-      <td>Section</td>
-      <td><input name="twhmp" type="text" id="twhmp" style="width:150px" readonly></td>
+      <td>Specification</td>
+      <td><input name="Ket" type="text" id="Ket" style="width:150px" readonly></td>
     </tr>
     <tr>
       <td>Unit</td>
