@@ -10,9 +10,12 @@ switch ($grp){
 	case "exim":
 		$tm = "tree_data_exim";
 		break;
+	case "hanggar":
+		$tm = "tree_data_hanggar";
+		break;		
 	case "bc":
 		$tm = "tree_data_bc";
-		break;		
+		break;			
 	default://case "eksekutif":
 		$tm = "tree_data_eks";
 		break;	

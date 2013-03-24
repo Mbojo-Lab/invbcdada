@@ -20,7 +20,7 @@ $q = "SELECT *,CONCAT(LEFT(h.CAR,8),'-',RIGHT(h.CAR,6)) AS FCAR,CONCAT(LEFT(NoDa
 if ($DokKdBc != ""){  
 	$q .= "WHERE h.DokKdBc LIKE '%$DokKdBc%' ";
 } else {
-	$q .= "WHERE h.DokKdBc IN ('1','8','6','5') ";
+	$q .= "WHERE (h.DokKdBc IN ('1','8','5') OR (h.DokKdBc = '6' AND h.ket = 'in')) ";
 }
 
 if($dtdari != '' && $dtsampai != ''):

@@ -436,8 +436,8 @@ function btnSim(){
 	try {
 	if ($('#CAR').val() == ''){	
 		throw "CAR-Nomor Pengajuan";	
-	} else if ($('#NoDaf').val() == ''){
-		throw "NoDaf-Nomor Pendaftaran";
+	//} else if ($('#NoDaf').val() == ''){
+		//throw "NoDaf-Nomor Pendaftaran";
 	} else if ($('#TgDaf').val() == ''){
 		throw "TgDaf-Tanggal Pendaftaran";
 		throw "CAR-Dokumen Pelengkap";									

@@ -45,6 +45,7 @@ $rs = $run->fetchAll(PDO::FETCH_ASSOC);
 jenis_tpb = <?php echo json_encode($rs) ?>;
 
 $(function(){
+	
 	$('#dg').datagrid({
 		title:'DAFTAR APPROVAL PEMASUKAN BARANG PER DOKUMEN PABEAN',
 		width:700,
@@ -100,8 +101,11 @@ function detail(jenis_bc,car){
 
 
 function approve(jenis_bc,car){;
-	$.post('approve.php',{DokKdBc:jenis_bc,CAR:car},function(){});
-	location.reload(true);
+	$.post('approve.php',{DokKdBc:jenis_bc,CAR:car},function(result){
+		alert(result)
+		location.reload(true);
+	});
+	
 }
 
 </script>

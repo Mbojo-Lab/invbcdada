@@ -34,7 +34,7 @@ $sql[]= "INSERT INTO log VALUES (0,'$tgl','$usr','$ketlog')";
 
 $sql[] = "COMMIT";	
 		
-$msg = "Data berhasil disimpan!";
+$msg = "Approve Sukses!";
 $errmsg = "Terjadi Kesalahan, Data tidak dapat disimpan!";
 
 	foreach($sql as $q){

@@ -172,27 +172,44 @@ function nformat2(num,curr) {
 	if(isNaN(num))
 	num = "0";
 	sign = (num == (num = Math.abs(num)));
-	num = Math.floor(num*100+0.50000000001);
 	
-	cents2 = num%100;
-	num = Math.floor(num/100).toString();			
-	if(cents2<10){
-		cents2 = "0" + cents2;
-	} 
+	if (curr==4){
+		num = Math.floor(num*10000+0.50000000001);
+		cents4 = num%10000;
+		num = Math.floor(num/10000).toString();			
+		if(cents4<10){
+			cents4 = "000" + cents4;
+		} else if(cents4<100) {
+			cents4 = "00" + cents4;
+		} else if(cents4<1000) {
+			cents4 = "0" + cents4;
+		}		 	
+	} else if (curr==3){
+		num = Math.floor(num*1000+0.50000000001);
+		cents3 = num%1000;
+		num = Math.floor(num/1000).toString();			
+		if(cents3<10){
+			cents3 = "00" + cents3;
+		} else if(cents3<100) {
+			cents3 = "0" + cents3;
+		}	
+	} else {
+		num = Math.floor(num*100+0.50000000001);
+		cents2 = num%100;
+		num = Math.floor(num/100).toString();			
+		if(cents2<10){
+			cents2 = "0" + cents2;
+		}
+	}
 	
-	/*cents3 = num%1000;
-	num = Math.floor(num/1000).toString();			
-	if(cents3<10){
-		cents3 = "00" + cents3;
-	} else if(cents3<100) {
-		cents3 = "0" + cents3;
-	}*/
 	
 	for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)
 	num = num.substring(0,num.length-(4*i+3))+','+
 	num.substring(num.length-(4*i+3));
 	
-	if (curr==3){
+	if (curr==4){
+		return num + '.' + cents4;
+	} else if (curr==3){
 		return num + '.' + cents3;
 	} else if (curr==2){
 		return num + '.' + cents2;

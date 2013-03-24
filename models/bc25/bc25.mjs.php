@@ -728,8 +728,8 @@ function btnSim(){
 		
 	if ($('#CAR').val() == ''){	
 		throw "CAR-Nomor Pengajuan";	
-	} else if ($('#NoDaf').val() == ''){
-		throw "NoDaf-Nomor Pendaftaran";
+	//} else if ($('#NoDaf').val() == ''){
+	//	throw "NoDaf-Nomor Pendaftaran";
 	} else if ($('#TgDaf').val() == ''){
 		throw "TgDaf-Tanggal Pendaftaran";						
 	} else if (rows.length == 0){

@@ -57,9 +57,10 @@ require_once "mst_frm.cjs.php";
         <option value=""></option>
         <option value="admin">Admin</option>
         <option value="gudang">Gudang</option>
-        <option value="exim">Exim</option>
-        <option value="bc">BC</option>
+        <option value="exim">Exim</option>        
         <option value="eksekutif">Eksekutif</option>
+		<option value="hanggar">Hanggar</option>
+		<option value="bc">BC</option>
       </select>
       </td>
     </tr>
